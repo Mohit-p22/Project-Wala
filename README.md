@@ -45,4 +45,4 @@ License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 Contact
 
-For any inquiries or issues, please open an issue on the repository or contact us at [2321mohitparihar@.com].
+For any inquiries or issues, please open an issue on the repository or contact us at [2321mohitparihar@gmail.com].
