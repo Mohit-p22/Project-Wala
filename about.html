@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    header {
+      width: 100vw;
+      height: 10vh;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="headd">
+      <h2 class="title" style="color: white; width: 100%;">About </h2>
+    </div>
+   
+    <nav class="navbar" style="padding: 10px; padding-right: 10px; width: 80%; float: right;">
+      <div class="max-width" style="display: flex; float: right;">
+         
+          
+          <div class="menu-btn">
+              <i class="fas fa-bars"></i>
+          </div>
+      </div>
+  </nav>
+
+  </header>
+
+  <section class="about" id="about">
+    <div class="max-width">
+
+      <div class="about-content">
+        <div class="column left">
+          <img src="images/handshake.jpg" alt="" style="width: 400px; height: 300px;">
+        </div>
+        <div class="column right">
+          <div class="text">Project-Wala<span class="typing-2"></span></div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Minus quaerat rem non quo qui, asperiores, aut voluptates quod voluptate, cupiditate vel!
+            Aperiam numquam, quas ea distinctio magnam veniam incidunt velit!voluptatum eveniet doloremque autem
+            excepturi eaque, sit laboriosam voluptatem nisi delectus.<br><br>
+
+            Facere explicabo hic minus accusamus alias fugnihil dolorum quae. Explicabo illo unde, odio consequatur
+            ipsam possimus veritatis, placeat, ab molestiaevelit inventore exercitationem consequuntur blanditiis omnis
+            beatae. Dolor iste excepturi ratione solutaquas culpa voluptatum repudiandae harum non.</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr style="margin:0 90px;">
+
+  <section id="below">
+    <div class="conteiner">
+      <div class="content">
+
+        <div class="right-side">
+          <div class="topic-text">Feedback message</div>
+          <form action="#">
+            <div class="input-box">
+              <input type="text" placeholder="Enter your name">
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Enter your email">
+            </div>
+            <div class="input-box message-box">
+              <textarea style="margin-left: 20px;" rows="10" cols="50" placeholder="Any Suggestion for Us"></textarea>
+            </div>
+            <div class="button">
+              <input type="button" value="Send Now">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="foot">
+
+  </div>
+
+  <footer style="background-color: rgb(209, 209, 209);">
+
+    <section class="footer" style="padding: 20px 0; margin-top: 10px;">
+        <div class="footer-row">
+          <div class="footer-col">
+            <h4>Info</h4>
+            <ul class="links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#">Compressions</a></li>
+              <li><a href="#">Customers</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">Collection</a></li>
+            </ul>
+          </div>
+  
+         
+  
+          <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p>
+              Subscribe to our newsletter for a weekly dose
+              of news, updates, helpful tips, and
+              exclusive offers.
+            </p>
+            <form action="#">
+              <input type="text" placeholder="Your email" required>
+              <button type="submit">SUBSCRIBE</button>
+            </form>
+            <div class="icons">
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-github"></i>
+              <i class="fa-brands fa-youtube"></i>  
+            </div>
+          </div>
+        </div>
+        <span>Created By <a href="https://www.linkedin.com/in/mohit-parihar-4013bb203">@Mohit Parihar </a><span class="far fa-copyright"></span> 2020 All rights reserved.</span>
+
+      </section>
+    </footer>
+
+
+
+  <script type="text/javascript" src="Travel-html\js\jquery-3.1.1.min.js"></script>
+  <script src="hislide\jquery.hislide.min.js"></script>
+  <script src="hislide\jquery.hislide.js"></script>
+  <script>
+    $(".slide").hiSlide();
+
+    var slide = document.getElementById("slidee");
+    var upArrow = document.getElementById("upa");
+    var upArrow = document.getElementById("doa");
+
+    let x = 0;
+
+    upa.onclick = function () {
+      if (x > "-750") {
+        x = x - 250;
+        slide.style.top = x + "px";
+      }
+    }
+
+
+    doa.onclick = function () {
+      if (x < 0) {
+        x = x + 250;
+        slide.style.top = x + "px";
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

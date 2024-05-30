@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+    *{
+        font-family: 'Ubuntu', sans-serif;
+    }
+    button:nth-of-type(1){
+        display: none;
+    }
+</style>
+<body>
+    <div class="coverr">
+        <form>
+            <div class="heading">
+                <h1>Register Here!</h1>
+            </div>
+
+            <div class="fform active">
+                <div class="fieldd">
+                    <label for="name">Project Title</label>
+                    <input type="text" placeholder="Title">
+                    <span></span>
+                </div>
+                <div class="fieldd">
+                    <label for="email">Categories</label>
+                    <input type="email" placeholder="Categories">
+                    <span></span>
+                </div>
+            </div>
+
+                
+            <div class="fform">
+                <div class="fieldd">
+                    <label for="username">Description</label>
+                    <textarea id="ta" rows="2" cols="34" placeholder="Discuss about your project">Description</textarea>
+                    <span></span>
+                </div>
+                <div class="fieldd">
+                    <label for="phone">Selling Amount</label>
+                    <input type="number" placeholder="Project value">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="fform">
+                <div class="fieldd">
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="Email">
+                    <span></span>
+                </div>
+                <div class="fieldd">
+                    <label for="phone">Mobile No.</label>
+                    <input type="number" placeholder="Mobile No.">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="fform">
+                <div class="fieldd">
+                    <label for="DOB">Date of birth</label>
+                    <input type="date">
+                    <span></span>
+                </div>
+                <div class="fieldd">
+                    <label for="image">Picture</label>
+                    <input type="file">
+                    <span></span>
+                </div>
+            </div>
+            <div class="option">
+                <div id="btn">
+                    <button>Previous</button>
+                    <button>Next</button>
+                </div>
+
+                <div class="page-indicator">
+                    <!-- <em class="active"></em>
+				<em></em>
+				<em></em>
+				<em></em> -->
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let form, div, button, indicate, curPage, emn;
+form = document.querySelector('form');
+div = document.getElementsByClassName('fform')
+button = document.getElementsByTagName('button');
+indicate = document.querySelector('.page-indicator');
+curPage = 0;
+emn = indicate.getElementsByTagName('em');
+
+
+window.onload = createIndicator;
+form.onsubmit = () => { return false; }
+
+function createIndicator() {
+    for (let i = 0; i < div.length; i++) {
+        const em = document.createElement('em');
+        em.id = i;
+        if (i == 0) { em.className = 'cur-page' }
+        indicate.appendChild(em);
+    }
+}
+
+button[1].onclick = validate;
+button[0].onclick = () => {
+    if (curPage > 0) { curPage--; }
+    if (curPage < 1) { button[0].style.display = 'none'; }
+    if (curPage < div.length - 1) { button[1].textContent = 'Next'; }
+    dispayPage(curPage);
+    activeIndicator(curPage);
+}
+
+function validate() {
+    const activePage = document.querySelector('.active')
+    const field = activePage.getElementsByClassName('fieldd');
+    let inputFirst = field[0].children[1];
+    let inputLast = field[1].children[1];
+    
+    if (inputFirst.value != '' && inputLast.value != '') {
+        curPage++;
+        button[0].style.display = 'block';
+        if (curPage > div.length - 2) 
+        { 
+            button[1].textContent = 'Post';
+         }
+        if (curPage >= div.length) {
+            form.onsubmit = () => { return true; }
+        }
+        dispayPage(curPage);
+        activeIndicator(curPage);       
+    }
+    if (inputFirst.value == '') { hide(inputFirst); }
+    if (inputLast.value == '') { hide(inputLast); }
+}
+
+function dispayPage(page) {
+    for (let i of div) i.classList.remove('active');
+    div[page].classList.add('active');
+}
+
+function hide(input) {
+    input.nextElementSibling.textContent = "This field is empty";
+    setTimeout(() => {
+        input.nextElementSibling.textContent = "";
+    }, 2000);
+}
+function activeIndicator(page) {
+    for (let i of emn) i.classList.remove('cur-page');
+    emn[page].classList.add('cur-page');
+
+}
+
+
+
+    </script>
+</body>
+
+</html>

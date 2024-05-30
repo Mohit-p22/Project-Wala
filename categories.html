@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale = 1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <title>javascript cards</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+      nav{
+        background-color: black;
+      }
+      .gap{
+        width: 100vw;
+        height: 20vh;
+      }
+    </style>
+</head>
+
+<body onload="loded()">
+  
+    <nav class="navbar">
+        <div class="max-width" style="display: flex; float: right;">
+           
+            <ul class="menu">
+                <li><a href="home.html" class="menu-btn">Home</a></li>
+                <li><a href="categories.html" class="menu-btn">Categories</a></li>
+                <li><a href="about.html" class="menu-btn">About</a></li>
+                <li><a href="join.html" class="menu-btn" ><button id="bt">Sell Now</button></a></li>
+            </ul>
+         
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="gap">
+
+    </div>
+    <div class="containers">
+
+    </div>
+
+    <script>
+        var titlearray = ["css", "js", "python", "java", "android", "jquery", "ruby","mohit"];
+        var descriptionarray = ["css style", "js program", "python code", "java objects", "android program",
+         "jquery objects", "ruby code"];
+    
+        var dynamic = document.querySelector('.containers');
+        for (var i = 0; i < titlearray.length; i++) {
+            var fetch = document.querySelector('.containers').innerHTML;
+            dynamic.innerHTML = `<div id="cards${i}" class="boxes">
+      <div class="box-content">
+        <h2>${titlearray[i]}</h2>
+        <p>
+          ${descriptionarray[i]}
+        </p>
+        <a class="showmore" href="#">ReadMore</a>
+      </div>
+    </div>` + fetch;
+            var bgimg = document.getElementById(`cards${i}`);
+            bgimg.style.backgroundImage = `url('img/${titlearray[i]}.jpg')`;
+        } 
+    </script>
+    
+   
+</body>
+
+</html>
+
+</html>
